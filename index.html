@@ -3,8 +3,25 @@
     <meta charset="UTF-8" />
     <script src="script.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body>
     <h1 id="title">Learn Alpine JS</h1>
+
+    <div x-data="{ open: false }">
+      <button @click="open = !open">Expand</button>
+
+      <span x-show="open"> lorem ipsum</span>
+    </div>
+
+    <hr />
+
+    <div x-data="{ count: 0 }">
+      <button x-on:click="count--">➖</button>
+
+      <span x-text="count"></span>
+
+      <button x-on:click="count++">➕</button>
+    </div>
   </body>
 </html>
